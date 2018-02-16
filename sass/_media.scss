@@ -1,0 +1,70 @@
+main {
+	img,
+	figure {
+		@extend %clearfix;
+		max-width: 100%;
+		height: auto;
+		clear: both;
+		vertical-align: middle; // fixes space under image when part of figure
+		
+		&.alignnone,
+		&.aligncenter,
+		&.alignright,
+		&.alignleft {
+			margin: 0 calc(-50vw + 50%) $mgn-thin;
+			max-width: 100vw;
+		}
+		
+		@include break-mob {
+			&.alignright {
+				float: right;
+				margin: $mgn-thin calc(-50vw + 50%) $mgn-thin $mgn-thin;
+				max-width: 50vw;
+			}
+			&.alignleft {
+				float: left;
+				margin: $mgn-thin $mgn-thin $mgn-thin calc(-50vw + 50%);
+				max-width: 50vw;
+			}
+		}
+	}
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25vw;
+	height: 0;
+	overflow: hidden;
+	margin: 0 calc(-50vw + 50%) $mgn-thin;
+	max-width: 100vw;
+	clear: both;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	background-color: $clr-grey;
+	border: 0;
+	margin: $mgn-wide 0;
+}
+
+.avatar {
+    display: inline-block;
+    border-radius: 50%;
+    background-image: url('./assets/avatar-default.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 96px;
+    height: 96px;
+}

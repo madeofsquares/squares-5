@@ -1,0 +1,57 @@
+// colour palette
+$clr-black: #3f444d;
+$clr-grey: #a1a6ab;
+$clr-light-grey: #f4f7f9;
+
+$clr-alpha-1: #fb2934;
+$clr-alpha-2: #ffa294;
+$clr-alpha-3: #ffe8de;
+
+$clr-beta-1: #21cccd;
+$clr-beta-2: #7fe6dc;
+$clr-beta-3: #d0f9f1;
+
+
+// margins
+$mgn-wide: 40px;
+$mgn-thin: 24px;
+
+
+// breakpoints
+@mixin break-tab {
+	@media  ( min-width: 75em ) {
+		@content;
+	}
+}
+
+@mixin break-mob {
+	@media ( min-width: 45em ) {
+		@content;
+	}
+}
+// @include break-mob { content }
+
+
+// mixins
+%clearfix {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+.clearfix {
+	@extend %clearfix;
+}
+// @extend %clearfix;
+
+@mixin crossbrowser( $property, $css ) {
+    -webkit-#{$property}: $css;
+    -moz-#{$property}: $css;
+    -o-#{$property}: $css;
+    #{$property}: $css;
+}
+// @include crossbrowser( transition, 0.2s ease );
