@@ -13,7 +13,7 @@
             <?php
             $childArgs = array(
                 'child_of'      => $post->ID,
-                'sort_column'   => 'menu_order',
+                'sort_column'   => 'desc',
                 'hierarchical'  => 0,
             );
             $pageChildren = get_pages( $childArgs );

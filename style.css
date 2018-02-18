@@ -566,6 +566,13 @@ ol {
     .meta .tags a:hover {
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); }
 
+.client, .year, .project-media {
+  color: #a1a6ab;
+  font-size: 0.875em;
+  margin-bottom: 24px; }
+  .client span, .year span, .project-media span {
+    margin-right: 1em; }
+
 .grid-post-title {
   margin: 0 20px 20px;
   font-size: 1.3em;
@@ -634,7 +641,7 @@ main {
         flex: 0 0 47%; }
         .page-grid > .grid-post:nth-child(2n + 1):last-child {
           margin-right: 53%; } }
-    @media (min-width: 75em) {
+    @media (min-width: 64em) {
       .page-grid > .grid-post {
         flex: 0 0 22%; }
         .page-grid > .grid-post:nth-child(4n + 2):last-child {
@@ -662,7 +669,7 @@ main {
   margin-bottom: 40px;
   width: 100%;
   border-bottom: 6px solid #f4f7f9; }
-  @media (min-width: 45em) {
+  @media (min-width: 64em) {
     .site-header {
       flex-direction: row;
       padding: 0 24px; } }
@@ -675,7 +682,7 @@ main {
   order: 2;
   margin-bottom: 24px;
   text-align: center; }
-  @media (min-width: 45em) {
+  @media (min-width: 64em) {
     .site-branding {
       order: 1;
       margin-bottom: 0;
@@ -699,7 +706,7 @@ main {
   z-index: 999;
   order: 1;
   margin-bottom: 24px; }
-  @media (min-width: 45em) {
+  @media (min-width: 64em) {
     .site-nav {
       order: 2;
       margin-bottom: 0;
@@ -730,7 +737,7 @@ main {
     .nav-menu a:hover {
       color: #3f444d;
       background-color: #d0f9f1; }
-  @media (min-width: 45em) {
+  @media (min-width: 64em) {
     .nav-menu {
       max-height: 1000px;
       overflow: unset; }
@@ -753,9 +760,24 @@ main {
   font-weight: bold; }
   .menu-btn:hover {
     color: #7fe6dc; }
+  .menu-btn #lbl-on:before, .menu-btn #lbl-off:before {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    margin-right: 0.4em; }
   .menu-btn #lbl-on {
     display: none; }
-  @media (min-width: 45em) {
+    .menu-btn #lbl-on:before {
+      content: '';
+      background-image: url("./assets/icons/i-close.svg"); }
+  .menu-btn #lbl-off:before {
+    content: '';
+    background-image: url("./assets/icons/i-menu.svg"); }
+  @media (min-width: 64em) {
     .menu-btn {
       display: none; } }
 
@@ -826,3 +848,81 @@ hr {
   background-repeat: no-repeat;
   width: 96px;
   height: 96px; }
+
+.project-media {
+  display: flex;
+  flex-wrap: wrap; }
+
+.icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .icon:not(:last-child) {
+    margin-right: 1em; }
+  .icon.x8 {
+    width: 8px;
+    height: 8px; }
+  .icon.x24 {
+    width: 24px;
+    height: 24px; }
+  .icon.x32 {
+    width: 32px;
+    height: 32px; }
+  .icon.x48 {
+    width: 48px;
+    height: 48px; }
+  .icon.photoshop, .icon.ps {
+    background-image: url("./assets/icons/i-photoshop.svg"); }
+  .icon.illustrator, .icon.il {
+    background-image: url("./assets/icons/i-illustrator.svg"); }
+  .icon.aftereffects, .icon.ae {
+    background-image: url("./assets/icons/i-afterevvects.svg"); }
+  .icon.animate, .icon.an {
+    background-image: url("./assets/icons/i-animate.svg"); }
+  .icon.dreamweaver, .icon.dw {
+    background-image: url("./assets/icons/i-dreamweaver.svg"); }
+  .icon.indesign, .icon.id {
+    background-image: url("./assets/icons/i-indesign.svg"); }
+  .icon.premiere, .icon.pr {
+    background-image: url("./assets/icons/i-premiere.svg"); }
+  .icon.experiencedesign, .icon.xd {
+    background-image: url("./assets/icons/i-xd.svg"); }
+  .icon.twitter, .icon.twt, .icon.tweet {
+    background-image: url("./assets/icons/i-twitter.svg"); }
+  .icon.youtube, .icon.yt {
+    background-image: url("./assets/icons/i-youtube.svg"); }
+  .icon.facebook, .icon.fb {
+    background-image: url("./assets/icons/i-facebook.svg"); }
+  .icon.google {
+    background-image: url("./assets/icons/i-google.svg"); }
+  .icon.tumblr {
+    background-image: url("./assets/icons/i-tumblr.svg"); }
+  .icon.instagram, .icon.insta {
+    background-image: url("./assets/icons/i-instagram.svg"); }
+  .icon.pinterest, .icon.pin {
+    background-image: url("./assets/icons/i-pinterest.svg"); }
+  .icon.invision {
+    background-image: url("./assets/icons/i-invision.svg"); }
+  .icon.sketch, .icon.sketchapp {
+    background-image: url("./assets/icons/i-sketchapp.svg"); }
+  .icon.linkedin {
+    background-image: url("./assets/icons/i-linkedin.svg"); }
+  .icon.etsy {
+    background-image: url("./assets/icons/i-etsy.svg"); }
+  .icon.dropbox {
+    background-image: url("./assets/icons/i-dropbox.svg"); }
+  .icon.email, .icon.mail {
+    background-image: url("./assets/icons/i-email.svg"); }
+  .icon.download {
+    background-image: url("./assets/icons/i-download.svg"); }
+  .icon.pinterest, .icon.pin {
+    background-image: url("./assets/icons/i-pinterest.svg"); }
+  .icon.wordpress, .icon.wp {
+    background-image: url("./assets/icons/i-wordpress.svg"); }
+  .icon.menu {
+    background-image: url("./assets/icons/i-menu.svg"); }
+  .icon.close {
+    background-image: url("./assets/icons/i-close.svg"); }
