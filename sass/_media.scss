@@ -68,3 +68,119 @@ hr {
     width: 96px;
     height: 96px;
 }
+
+.project-media {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon {
+    display: block;
+    
+    width: 16px;
+    height: 16px;
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    &:not(:last-child) {
+        margin-right: 1em;
+    }
+    
+    &.x8 {
+        width: 8px;
+        height: 8px;
+    }
+    &.x24 {
+        width: 24px;
+        height: 24px;
+    }
+    &.x32 {
+        width: 32px;
+        height: 32px;
+    }
+    &.x48 {
+        width: 48px;
+        height: 48px;
+    }
+    
+    &.photoshop, &.ps {
+        background-image: url('./assets/icons/i-photoshop.svg');
+    }
+    &.illustrator, &.il {
+        background-image: url('./assets/icons/i-illustrator.svg');
+    }
+    &.aftereffects, &.ae {
+        background-image: url('./assets/icons/i-afterevvects.svg');
+    }
+    &.animate, &.an {
+        background-image: url('./assets/icons/i-animate.svg');
+    }
+    &.dreamweaver, &.dw {
+        background-image: url('./assets/icons/i-dreamweaver.svg');
+    }
+    &.indesign, &.id {
+        background-image: url('./assets/icons/i-indesign.svg');
+    }
+    &.premiere, &.pr {
+        background-image: url('./assets/icons/i-premiere.svg');
+    }
+    &.experiencedesign, &.xd {
+        background-image: url('./assets/icons/i-xd.svg');
+    }
+    &.twitter, &.twt, &.tweet {
+        background-image: url('./assets/icons/i-twitter.svg');
+    }
+    &.youtube, &.yt {
+        background-image: url('./assets/icons/i-youtube.svg');
+    }
+    &.facebook, &.fb {
+        background-image: url('./assets/icons/i-facebook.svg');
+    }
+    &.google {
+        background-image: url('./assets/icons/i-google.svg');
+    }
+    &.tumblr {
+    background-image: url('./assets/icons/i-tumblr.svg');
+    }
+    &.instagram, &.insta {
+        background-image: url('./assets/icons/i-instagram.svg');
+    }
+    &.pinterest, &.pin {
+        background-image: url('./assets/icons/i-pinterest.svg');
+    }
+    &.invision {
+        background-image: url('./assets/icons/i-invision.svg');
+    }
+    &.sketch, &.sketchapp {
+        background-image: url('./assets/icons/i-sketchapp.svg');
+    }
+    &.linkedin {
+        background-image: url('./assets/icons/i-linkedin.svg');
+    }
+    &.etsy {
+        background-image: url('./assets/icons/i-etsy.svg');
+    }
+    &.dropbox {
+        background-image: url('./assets/icons/i-dropbox.svg');
+    }
+    &.email, &.mail {
+        background-image: url('./assets/icons/i-email.svg');
+    }
+    &.download {
+        background-image: url('./assets/icons/i-download.svg');
+    }
+    &.pinterest, &.pin {
+        background-image: url('./assets/icons/i-pinterest.svg');
+    }
+    &.wordpress, &.wp {
+        background-image: url('./assets/icons/i-wordpress.svg');
+    }
+    &.menu {
+        background-image: url('./assets/icons/i-menu.svg');
+    }
+    &.close {
+        background-image: url('./assets/icons/i-close.svg');
+    }
+}

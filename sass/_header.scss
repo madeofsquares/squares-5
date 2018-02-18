@@ -8,7 +8,7 @@
     width: 100%;
     border-bottom: 6px solid $clr-light-grey;
     
-    @include break-mob {
+    @include break-tab {
         flex-direction: row;
         padding: 0 $mgn-thin;
     }
@@ -24,7 +24,7 @@
     margin-bottom: $mgn-thin;
     text-align: center;
     
-    @include break-mob {
+    @include break-tab {
         order: 1;
         margin-bottom: 0;
         text-align: unset;
@@ -56,7 +56,7 @@
     order: 1;
     margin-bottom: $mgn-thin;
     
-    @include break-mob {
+    @include break-tab {
         order: 2;
         margin-bottom: 0;
         width: 60%;
@@ -97,7 +97,7 @@
         }
     }
     
-    @include break-mob {
+    @include break-tab {
         max-height: 1000px;
         overflow: unset;
         
@@ -129,11 +129,36 @@
         color: $clr-beta-2;
     }
     
-    #lbl-on {
-        display: none;
+    #lbl-on, #lbl-off {
+        &:before {
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: text-bottom;
+            margin-right: 0.4em;
+        }
     }
     
-    @include break-mob {
+    #lbl-on {
+        display: none;
+        
+        &:before {
+            content: '';
+            background-image: url('./assets/icons/i-close.svg');
+        }
+    }
+    
+    #lbl-off {        
+        &:before {
+            content: '';
+            background-image: url('./assets/icons/i-menu.svg');
+        }
+    }
+    
+    @include break-tab {
         display: none;
     }
 }

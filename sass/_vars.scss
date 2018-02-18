@@ -19,7 +19,7 @@ $mgn-thin: 24px;
 
 // breakpoints
 @mixin break-tab {
-	@media  ( min-width: 75em ) {
+	@media  ( min-width: 64em ) {
 		@content;
 	}
 }

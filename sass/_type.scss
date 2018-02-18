@@ -236,6 +236,16 @@ ol {
 	}
 }
 
+.client, .year, .project-media {
+    color: $clr-grey;
+    font-size: 0.875em;
+    margin-bottom: $mgn-thin;
+    
+    span {
+        margin-right: 1em;
+    }
+}
+
 .grid-post-title {
     margin: 0 20px 20px;
     font-size: 1.3em;
