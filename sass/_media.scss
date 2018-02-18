@@ -18,12 +18,12 @@ main {
 		@include break-mob {
 			&.alignright {
 				float: right;
-				margin: $mgn-thin calc(-50vw + 50%) $mgn-thin $mgn-thin;
+				margin: $mgn-thin calc(-50vw + 50%) $mgn-thin $mgn-wide;
 				max-width: 50vw;
 			}
 			&.alignleft {
 				float: left;
-				margin: $mgn-thin $mgn-thin $mgn-thin calc(-50vw + 50%);
+				margin: $mgn-thin $mgn-wide $mgn-thin calc(-50vw + 50%);
 				max-width: 50vw;
 			}
 		}

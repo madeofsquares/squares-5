@@ -11,11 +11,11 @@ $clr-beta-1: #21cccd;
 $clr-beta-2: #7fe6dc;
 $clr-beta-3: #d0f9f1;
 
-
-// margins
+// globals
 $mgn-wide: 40px;
 $mgn-thin: 24px;
 
+$footer-height: 100px;
 
 // breakpoints
 @mixin break-tab {
@@ -30,7 +30,6 @@ $mgn-thin: 24px;
 	}
 }
 // @include break-mob { content }
-
 
 // mixins
 %clearfix {
