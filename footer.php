@@ -1,7 +1,8 @@
 <?php $adminemail = get_option ( 'admin_email' ); ?>
 
 <footer role="contentinfo">
-    <p class="legal">Copyright &copy; <?php echo date( "Y" ); ?>. All rights reserved. For more information contact <a href="mailto:<?php echo $adminemail; ?>"><?php echo $adminemail; ?></a>.</p>
+    <div class="legal"><p>&copy; <?php echo date( "Y" ); ?> Steve Lambert</p></div>
+    <div class="contact"><p>Contact: <a href="mailto:<?php echo $adminemail; ?>"><?php echo $adminemail; ?></a></p></div>
 </footer>
 
 </div> <!-- /wrapper -->

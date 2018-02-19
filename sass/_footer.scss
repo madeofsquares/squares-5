@@ -1,25 +1,16 @@
 footer {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	padding: 0 $mgn-wide;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: $footer-height;
-	background-color: $clr-black;
-	color: #fff;
+	border-top: 6px solid $clr-light-grey;
 	font-size: 0.875em;
 	
 	p {
 	    margin-bottom: 0;
-	}
-	
-	a {
-	    box-shadow: 0 -0.2em 0 $clr-alpha-1 inset;
-	    
-	    &:hover {
-	        box-shadow: 0 -0.5em 0 $clr-alpha-1 inset;
-	    }
 	}
 }

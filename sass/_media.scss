@@ -69,13 +69,8 @@ hr {
     height: 96px;
 }
 
-.project-media {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.icon {
-    display: block;
+%icon {
+    display: inline-block;
     
     width: 16px;
     height: 16px;
@@ -83,11 +78,7 @@ hr {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    
-    &:not(:last-child) {
-        margin-right: 1em;
-    }
-    
+        
     &.x8 {
         width: 8px;
         height: 8px;
@@ -183,4 +174,48 @@ hr {
     &.close {
         background-image: url('./assets/icons/i-close.svg');
     }
+}
+
+.project-media {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .icon {
+    	@extend %icon;
+    	
+		&:not(:last-child) {
+			margin-right: 1em;
+		}
+    }
+}
+
+p, a, h1, h2, h3, h4, h5, h6 {
+	&.icon {
+		position: relative;
+		margin-left: 1.2em;
+				
+		&:before {
+			@extend %icon;
+			
+			content: ' ';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1em;
+			height: 1em;
+			margin-left: -1.2em;
+		}
+	}
+}
+
+.icon-list {
+	div {
+		&.icon {
+			@extend %icon;
+		}
+	}
+	
+	:not(:last-child) {
+		margin-right: 1em;
+	}
 }
