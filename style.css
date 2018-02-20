@@ -406,16 +406,12 @@ template {
 [hidden] {
   display: none; }
 
-.clearfix, main, main img,
-main figure {
+.clearfix, main, main img, main figure {
   *zoom: 1; }
-  .clearfix:before, main:before, main img:before,
-  main figure:before, .clearfix:after, main:after, main img:after,
-  main figure:after {
+  .clearfix:before, main:before, main img:before, main figure:before, .clearfix:after, main:after, main img:after, main figure:after {
     content: " ";
     display: table; }
-  .clearfix:after, main:after, main img:after,
-  main figure:after {
+  .clearfix:after, main:after, main img:after, main figure:after {
     clear: both; }
 
 body {
@@ -811,30 +807,39 @@ footer {
   footer p {
     margin-bottom: 0; }
 
-main img,
-main figure {
+main img, main figure {
   max-width: 100%;
   height: auto;
   clear: both;
   vertical-align: middle; }
-  main img.alignnone, main img.aligncenter, main img.alignright, main img.alignleft,
-  main figure.alignnone,
-  main figure.aligncenter,
-  main figure.alignright,
-  main figure.alignleft {
+  main img.alignnone, main img.aligncenter, main img.alignright, main img.alignleft, main figure.alignnone, main figure.aligncenter, main figure.alignright, main figure.alignleft {
     margin: 0 calc(-50vw + 50%) 24px;
     max-width: 100vw; }
   @media (min-width: 45em) {
-    main img.alignright,
-    main figure.alignright {
+    main img.alignright, main figure.alignright {
       float: right;
       margin: 24px calc(-50vw + 50%) 24px 40px;
       max-width: 50vw; }
-    main img.alignleft,
-    main figure.alignleft {
+    main img.alignleft, main figure.alignleft {
       float: left;
       margin: 24px 40px 24px calc(-50vw + 50%);
       max-width: 50vw; } }
+@media (min-width: 45em) {
+  main .image-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 calc(-50vw + 50%) 24px;
+    max-width: 100vw; } }
+@media (min-width: 45em) {
+  main .image-block > img, main .image-block figure {
+    float: none;
+    flex: auto;
+    width: 0;
+    max-width: 100vw;
+    margin: 0; }
+    main .image-block > img:not(:last-child), main .image-block figure:not(:last-child) {
+      margin-right: 24px; } }
 
 .video-container {
   position: relative;

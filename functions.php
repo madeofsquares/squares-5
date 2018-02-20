@@ -87,7 +87,7 @@ function fix_img_caption_shortcode( $val, $attr, $content = null ) {
     
     if ( 1 > ( int ) $width || empty( $caption ) ) return $val;
     
-    return '<figure id="' . $id . '" class="image-caption ' . esc_attr( $align ) . '" style="width: ' . ( int ) $width . 'px">' . do_shortcode( $content ) . '<figcaption>' . $caption . '</figcaption></figure>';
+    return '<figure id="' . $id . '" class="image-caption ' . esc_attr( $align ) . '">' . do_shortcode( $content ) . '<figcaption>' . $caption . '</figcaption></figure>';
 }
 add_filter('img_caption_shortcode', 'fix_img_caption_shortcode', 10, 3);
 
