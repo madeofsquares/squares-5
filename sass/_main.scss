@@ -3,19 +3,30 @@ html {
 }
 
 body {
-    position: relative;
-    min-height: 100%;
-    padding-bottom: $footer-height;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    
+    @include break-mob {
+        flex-direction: row;
+        flex: 1;
+    }
 }
 
 main {
 	@extend %clearfix;
 	
-	width: 100%;
+	flex: 1;
 	padding: 0 $mgn-thin;
 	margin: 0;
 	
 	@include break-mob {
+	    flex: 1;
 		padding: 0 $mgn-wide;
 	}
 }

@@ -24,8 +24,6 @@
 
 <body>
 
-<div class="wrapper">
-
 <header role="banner" class="site-header">
 	<div class="site-branding">
 		<?php
@@ -52,3 +50,5 @@
 	</nav>
 	
 </header>
+
+<div class="wrapper"> <!-- closes in footer.php -->
