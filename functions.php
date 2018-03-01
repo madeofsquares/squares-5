@@ -1,13 +1,7 @@
 <?php
 
-//switch off auto <p>
+// switch off auto <p>
 remove_filter( 'the_content', 'wpautop' );
-
-/*function filter_ptags_on_images($content) {
-    $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-    return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
-}
-add_filter('the_content', 'filter_ptags_on_images');*/
 
 // load theme stylesheet
 wp_register_style(
@@ -22,48 +16,11 @@ function squares_enqueue_style() {
 }
 add_action( 'wp_enqueue_scripts', 'squares_enqueue_style' );
 
-// register image sizes
-function custom_image_sizes() {
-	add_theme_support( 'post-thumbnails' );
-	
-	add_image_size( 'large_size', 1600, 9999 );
-	add_image_size( 'medium_size', 900, 9999 );
-	add_image_size( 'small_size', 600, 9999 );
-	add_image_size( 'thumb_size', 900, 900, true );
-}
-add_action( 'after_setup_theme', 'custom_image_sizes' );
-
-function image_size_names( $sizes ) {
-	$custom_sizes = array(
-		'large_size'	=>	'Large Image',
-		'medium_size'	=>	'Medium Image',
-		'small_size'	=>	'Small Image',
-		'thumb_size'	=>	'List Page Thumbnail'
-	);
-	return array_merge( $sizes, $custom_sizes );
-}
-add_filter( 'image_size_names_choose', 'image_size_names' );
-
 // register menus
 function register_my_menu() {
 	register_nav_menu( 'main-nav',__( 'Navigation Menu' ) );
 }
 add_action( 'init', 'register_my_menu' );
-
-// register widgets
-if ( function_exists( 'register_sidebar' ) ) {
-		
-	register_sidebar( array(
-		'name'				=> 'Content Widget Area',
-		'id'				=> 'widget-area',
-		'description'		=> 'Widget area that appears below main content',
-		'before_widget'		=> '<article class="widget-article">',
-		'after_widget'		=> '</article>',
-		'before_title'		=> '<h3 class="widget-title">',
-		'after_title'		=> '</h3>'
-	) );
-	
-}
 
 function getAverage($sourceURL){
     $image = imagecreatefromjpeg($sourceURL);
@@ -127,7 +84,6 @@ function custom_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
 // custom menu walker [https://www.microdot.io/simpler-wp-nav-menu-markup/]
-
 class Microdot_Walker_Nav_Menu extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $output .= '<div>';

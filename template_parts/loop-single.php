@@ -9,7 +9,5 @@
 	<div class="meta">
 		<div class="meta-author"><p><em>by <?php the_author(); ?></em></p></div>
 	</div>
-	<div class="meta">
 		<?php get_template_part( 'template_parts/post_tags' ); ?>
-	</meta>
 </div>
