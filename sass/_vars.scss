@@ -15,7 +15,10 @@ $clr-beta-3: #d0f9f1;
 $mgn-wide: 40px;
 $mgn-thin: 24px;
 
-$footer-height: 100px;
+$shadow-clr: rgba( darken( $clr-beta-1, 20% ), 0.3 );
+$shadow-lo: 0 2px 4px $shadow-clr, 0 0 3px $shadow-clr;
+$shadow-hi: 0 8px 20px $shadow-clr, 0 0 12px $shadow-clr;
+$shadow-in: 0 1px 4px $shadow-clr inset;
 
 // breakpoints
 @mixin break-tab {

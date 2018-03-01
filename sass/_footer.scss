@@ -2,11 +2,8 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 $mgn-wide;
-	position: absolute;
-	bottom: 0;
+	padding: $mgn-thin;
 	width: 100%;
-	height: $footer-height;
 	border-top: 6px solid $clr-light-grey;
 	font-size: 0.875em;
 	

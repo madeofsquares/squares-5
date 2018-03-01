@@ -5,8 +5,6 @@
 	<?php
 		get_template_part( 'template_parts/post_meta' );
 		the_excerpt();
-		echo '<div class="meta">';
-			get_template_part( 'template_parts/post_tags' );
-		echo '</div>';
+		get_template_part( 'template_parts/post_tags' );
 	?>
 </article>
