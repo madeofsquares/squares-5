@@ -15,10 +15,11 @@ $clr-beta-3: #d0f9f1;
 $mgn-wide: 40px;
 $mgn-thin: 24px;
 
-$shadow-clr: rgba( darken( $clr-beta-1, 20% ), 0.3 );
-$shadow-lo: 0 2px 4px $shadow-clr, 0 0 3px $shadow-clr;
-$shadow-hi: 0 8px 20px $shadow-clr, 0 0 12px $shadow-clr;
-$shadow-in: 0 1px 4px $shadow-clr inset;
+$shadow-clr-1: rgba( darken( $clr-beta-1, 16% ), 0.4 );
+$shadow-clr-2: rgba( darken( $clr-beta-1, 16% ), 0.2 );
+$shadow-lo: 0 2px 4px $shadow-clr-1, 0 0 3px $shadow-clr-2;
+$shadow-hi: 0 8px 20px $shadow-clr-1, 0 0 10px $shadow-clr-2;
+$shadow-in: 0 2px 5px $shadow-clr-2 inset;
 
 // breakpoints
 @mixin break-tab {

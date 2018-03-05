@@ -8,22 +8,22 @@
             <?php
                 $client = get_post_meta( $post->ID, 'client', true );
                 $year = get_post_meta( $post->ID, 'year', true );
-                $media_list = get_post_meta( $post->ID, 'project_media', false );
+                $media_list = get_post_meta( $post->ID, 'media', false );
                 
                 if ( $client ) {
-                    echo '<div class="client">Clent: ' . $client . '</div>';
+                    echo '<p class="client">Clent: ' . $client . '</p>';
                 }
                 
                 if ( $year ) {
-                    echo '<div class="year">Year: ' . $year . '</div>';
+                    echo '<p class="year">Year: ' . $year . '</p>';
                 }
                 
                 if ( $media_list ) {
-                    echo '<div class="project-media"><span>Media:</span>';
+                    echo '<p class="project-media">Media: ';
                     foreach ( $media_list as $media ) {
-                        echo '<div class="icon x24 ' . $media . '"></div>';
+                        echo '<span>' . $media . '</span>';
                     }
-                    echo '</div>';
+                    echo '</p>';
                 }
             
                 the_content();
