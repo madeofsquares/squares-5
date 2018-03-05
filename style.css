@@ -563,18 +563,22 @@ ol {
     font-size: 0.75em;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0); }
+    box-shadow: 0; }
     .meta .tags a:not(:last-child), .comment-list .comment-meta .tags a:not(:last-child) {
       margin-right: 1em; }
     .meta .tags a:hover, .comment-list .comment-meta .tags a:hover {
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); }
+      background-color: #3f444d;
+      box-shadow: 0 2px 4px rgba(22, 134, 135, 0.4), 0 0 3px rgba(22, 134, 135, 0.2); }
 
 .client, .year, .project-media {
   color: #a1a6ab;
   font-size: 0.875em;
-  margin-bottom: 24px; }
-  .client span, .year span, .project-media span {
-    margin-right: 1em; }
+  margin-bottom: 24px;
+  text-transform: capitalize;
+  white-space: pre; }
+  .client span:not(:last-child):after, .year span:not(:last-child):after, .project-media span:not(:last-child):after {
+    content: ", ";
+    white-space: pre; }
 
 .grid-post-title {
   margin: 0 20px 20px;
@@ -620,12 +624,12 @@ textarea[type="submit"] {
   background-color: #fb2934;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(19, 117, 117, 0.3), 0 0 3px rgba(19, 117, 117, 0.3);
+  box-shadow: 0 2px 4px rgba(22, 134, 135, 0.4), 0 0 3px rgba(22, 134, 135, 0.2);
   transition: all 0.2s ease;
   cursor: pointer; }
   button:hover, input[type="submit"]:hover,
   textarea[type="submit"]:hover {
-    box-shadow: 0 8px 20px rgba(19, 117, 117, 0.3), 0 0 12px rgba(19, 117, 117, 0.3); }
+    box-shadow: 0 8px 20px rgba(22, 134, 135, 0.4), 0 0 10px rgba(22, 134, 135, 0.2); }
 
 label {
   font-family: "Lato", sans-serif;
@@ -639,7 +643,7 @@ textarea {
   font-size: 1em;
   color: #3f444d;
   line-height: 1.4em;
-  box-shadow: 0 1px 4px rgba(19, 117, 117, 0.3) inset;
+  box-shadow: 0 2px 5px rgba(22, 134, 135, 0.2) inset;
   border: 1px solid #a1a6ab;
   border-radius: 4px;
   padding: 0.6em; }
@@ -711,7 +715,7 @@ body {
 main {
   flex: 1;
   padding: 0 24px;
-  margin: 0; }
+  margin: 0 0 40px; }
   @media (min-width: 45em) {
     main {
       flex: 1;
@@ -1020,10 +1024,6 @@ hr {
     background-image: url("./assets/icons/i-instagram.svg"); }
   .project-media .pinterest.icon, p.pinterest.icon:before, a.pinterest.icon:before, h1.pinterest.icon:before, h2.pinterest.icon:before, h3.pinterest.icon:before, h4.pinterest.icon:before, h5.pinterest.icon:before, h6.pinterest.icon:before, .icon-list div.pinterest.icon, .project-media .pin.icon, p.pin.icon:before, a.pin.icon:before, h1.pin.icon:before, h2.pin.icon:before, h3.pin.icon:before, h4.pin.icon:before, h5.pin.icon:before, h6.pin.icon:before, .icon-list div.pin.icon {
     background-image: url("./assets/icons/i-pinterest.svg"); }
-  .project-media .invision.icon, p.invision.icon:before, a.invision.icon:before, h1.invision.icon:before, h2.invision.icon:before, h3.invision.icon:before, h4.invision.icon:before, h5.invision.icon:before, h6.invision.icon:before, .icon-list div.invision.icon {
-    background-image: url("./assets/icons/i-invision.svg"); }
-  .project-media .sketch.icon, p.sketch.icon:before, a.sketch.icon:before, h1.sketch.icon:before, h2.sketch.icon:before, h3.sketch.icon:before, h4.sketch.icon:before, h5.sketch.icon:before, h6.sketch.icon:before, .icon-list div.sketch.icon, .project-media .sketchapp.icon, p.sketchapp.icon:before, a.sketchapp.icon:before, h1.sketchapp.icon:before, h2.sketchapp.icon:before, h3.sketchapp.icon:before, h4.sketchapp.icon:before, h5.sketchapp.icon:before, h6.sketchapp.icon:before, .icon-list div.sketchapp.icon {
-    background-image: url("./assets/icons/i-sketchapp.svg"); }
   .project-media .linkedin.icon, p.linkedin.icon:before, a.linkedin.icon:before, h1.linkedin.icon:before, h2.linkedin.icon:before, h3.linkedin.icon:before, h4.linkedin.icon:before, h5.linkedin.icon:before, h6.linkedin.icon:before, .icon-list div.linkedin.icon {
     background-image: url("./assets/icons/i-linkedin.svg"); }
   .project-media .etsy.icon, p.etsy.icon:before, a.etsy.icon:before, h1.etsy.icon:before, h2.etsy.icon:before, h3.etsy.icon:before, h4.etsy.icon:before, h5.etsy.icon:before, h6.etsy.icon:before, .icon-list div.etsy.icon {
