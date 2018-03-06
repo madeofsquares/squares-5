@@ -223,14 +223,15 @@ ol {
 			font-weight: bold;
 			text-transform: uppercase;
 		
-			box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+			box-shadow: 0;
 		
 			&:not(:last-child) {
 				margin-right: 1em;
 			}
 		
 			&:hover {
-				box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+			    background-color: $clr-black;
+				box-shadow: $shadow-lo;
 			}
 		}
 	}
@@ -240,9 +241,16 @@ ol {
     color: $clr-grey;
     font-size: 0.875em;
     margin-bottom: $mgn-thin;
+    text-transform: capitalize;
+    white-space: pre;
     
     span {
-        margin-right: 1em;
+        &:not(:last-child) {
+            &:after {
+                content: ", ";
+                white-space: pre;
+            }
+        }
     }
 }
 

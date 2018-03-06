@@ -23,7 +23,7 @@ main {
 	
 	flex: 1;
 	padding: 0 $mgn-thin;
-	margin: 0;
+	margin: 0 0 $mgn-wide;
 	
 	@include break-mob {
 	    flex: 1;
