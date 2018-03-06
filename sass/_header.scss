@@ -77,19 +77,13 @@
     }
     
     a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1 0 100%;
+        display: block;
         text-align: center;
         padding: 1em;
         color: $clr-grey;
         font-weight: bold;
         transition: all 0.2s linear;
-        
-        &.active {
-            color: $clr-beta-1;
-        }
+        width: 100%;
         
         &:hover {
             color: $clr-black;
@@ -97,16 +91,38 @@
         }
     }
     
+    .active,
+    .active-parent,
+    .active-ancestor {
+        color: $clr-black;
+    }
+    
     @include break-tab {
         max-height: 1000px;
         overflow: unset;
         
-        div {
+        & > div {
             width: auto;
+            position: relative;
+            
+            & > div {
+                flex-direction: column;
+                position: absolute;
+                display: none;
+                top: 100%;
+                left: -6px;
+                background-color: #fff;
+                border: 6px solid $clr-light-grey;
+                border-top: 3px dashed $clr-light-grey;
+                width: auto;
+            }
+            
+            &:hover > div {
+                display: block;
+            }
         }
         
         a {
-            flex: 0 1 auto;
             padding: 2em;
             position: relative;
         }

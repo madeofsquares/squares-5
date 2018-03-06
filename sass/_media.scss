@@ -1,85 +1,85 @@
 main {
-	img, figure {
-		@extend %clearfix;
-		max-width: 100%;
-		height: auto;
-		clear: both;
-		vertical-align: middle; // fixes space under image when part of figure
-		
-		&.alignnone,
-		&.aligncenter,
-		&.alignright,
-		&.alignleft {
-			margin: 0 calc(-50vw + 50%) $mgn-thin;
-			max-width: 100vw;
-		}
-		
-		@include break-mob {
-			&.alignright {
-				float: right;
-				margin: $mgn-thin calc(-50vw + 50%) $mgn-thin $mgn-wide;
-				max-width: 50vw;
-			}
-			&.alignleft {
-				float: left;
-				margin: $mgn-thin $mgn-wide $mgn-thin calc(-50vw + 50%);
-				max-width: 50vw;
-			}
-		}
-	}
-	
-	.image-block {
-		@include break-mob {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			margin: 0 calc(-50vw + 50%) $mgn-thin;
-			max-width: 100vw;
-		}
-		
-		& > img, figure {
-			@include break-mob {
-				float: none; // lear any floating from wayward classes
-				flex: auto;
-				width: 0;
-				max-width: 100vw;
-				margin: 0;
-				
-				&:not(:last-child) {
-					margin-right: $mgn-thin;
-				}
-			}
-		}
-	}
+    img, figure {
+        @extend %clearfix;
+        max-width: 100%;
+        height: auto;
+        clear: both;
+        vertical-align: middle; // fixes space under image when part of figure
+        
+        &.alignnone,
+        &.aligncenter,
+        &.alignright,
+        &.alignleft {
+            margin: 0 calc(-50vw + 50%) $mgn-thin;
+            max-width: 100vw;
+        }
+        
+        @include break-mob {
+            &.alignright {
+                float: right;
+                margin: $mgn-thin calc(-50vw + 50%) $mgn-thin $mgn-wide;
+                max-width: 50vw;
+            }
+            &.alignleft {
+                float: left;
+                margin: $mgn-thin $mgn-wide $mgn-thin calc(-50vw + 50%);
+                max-width: 50vw;
+            }
+        }
+    }
+    
+    .image-block {
+        @include break-mob {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 0 calc(-50vw + 50%) $mgn-thin;
+            max-width: 100vw;
+        }
+        
+        & > img, figure {
+            @include break-mob {
+                float: none; // lear any floating from wayward classes
+                flex: auto;
+                width: 0;
+                max-width: 100vw;
+                margin: 0;
+                
+                &:not(:last-child) {
+                    margin-right: $mgn-thin;
+                }
+            }
+        }
+    }
 }
 
 .video-container {
-	position: relative;
-	padding-bottom: 56.25vw;
-	height: 0;
-	overflow: hidden;
-	margin: 0 calc(-50vw + 50%) $mgn-thin;
-	max-width: 100vw;
-	clear: both;
+    position: relative;
+    padding-bottom: 56.25vw;
+    height: 0;
+    overflow: hidden;
+    margin: 0 calc(-50vw + 50%) $mgn-thin;
+    max-width: 100vw;
+    clear: both;
 }
 
 .video-container iframe,
 .video-container object,
 .video-container embed,
 .video-container video {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 hr {
-	display: block;
-	height: 1px;
-	background-color: $clr-grey;
-	border: 0;
-	margin: $mgn-wide 0;
+    display: block;
+    height: 1px;
+    background-color: $clr-grey;
+    border: 0;
+    margin: $mgn-wide 0;
 }
 
 .avatar {
@@ -99,7 +99,7 @@ hr {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-        
+    
     &.x8 {
         width: 8px;
         height: 8px;
@@ -202,41 +202,41 @@ hr {
     flex-wrap: wrap;
     
     .icon {
-    	@extend %icon;
-    	
-		&:not(:last-child) {
-			margin-right: 1em;
-		}
+        @extend %icon;
+        
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
     }
 }
 
 p, a, h1, h2, h3, h4, h5, h6 {
-	&.icon {
-		position: relative;
-		margin-left: 1.2em;
-				
-		&:before {
-			@extend %icon;
-			
-			content: ' ';
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 1em;
-			height: 1em;
-			margin-left: -1.2em;
-		}
-	}
+    &.icon {
+        position: relative;
+        margin-left: 1.2em;
+        
+        &:before {
+            @extend %icon;
+            
+            content: ' ';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1em;
+            height: 1em;
+            margin-left: -1.2em;
+        }
+    }
 }
 
 .icon-list {
-	div {
-		&.icon {
-			@extend %icon;
-		}
-	}
-	
-	:not(:last-child) {
-		margin-right: 1em;
-	}
+    div {
+        &.icon {
+            @extend %icon;
+        }
+    }
+    
+    :not(:last-child) {
+        margin-right: 1em;
+    }
 }

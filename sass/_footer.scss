@@ -2,6 +2,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 	padding: $mgn-thin;
 	width: 100%;
 	border-top: 6px solid $clr-light-grey;

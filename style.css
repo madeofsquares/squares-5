@@ -827,28 +827,40 @@ main {
     flex-wrap: inherit;
     width: 100%; }
   .nav-menu a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 100%;
+    display: block;
     text-align: center;
     padding: 1em;
     color: #a1a6ab;
     font-weight: bold;
-    transition: all 0.2s linear; }
-    .nav-menu a.active {
-      color: #21cccd; }
+    transition: all 0.2s linear;
+    width: 100%; }
     .nav-menu a:hover {
       color: #3f444d;
       background-color: #d0f9f1; }
+  .nav-menu .active,
+  .nav-menu .active-parent,
+  .nav-menu .active-ancestor {
+    color: #3f444d; }
   @media (min-width: 64em) {
     .nav-menu {
       max-height: 1000px;
       overflow: unset; }
-      .nav-menu div {
-        width: auto; }
+      .nav-menu > div {
+        width: auto;
+        position: relative; }
+        .nav-menu > div > div {
+          flex-direction: column;
+          position: absolute;
+          display: none;
+          top: 100%;
+          left: -6px;
+          background-color: #fff;
+          border: 6px solid #f4f7f9;
+          border-top: 3px dashed #f4f7f9;
+          width: auto; }
+        .nav-menu > div:hover > div {
+          display: block; }
       .nav-menu a {
-        flex: 0 1 auto;
         padding: 2em;
         position: relative; } }
 
@@ -897,6 +909,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 24px;
   width: 100%;
   border-top: 6px solid #f4f7f9;

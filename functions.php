@@ -113,11 +113,11 @@ class Microdot_Walker_Nav_Menu extends Walker_Nav_Menu {
             $url = $item->url;
         }
 
-        $output .= '<a ' . $active_class . ' href="' . $url . '">' . $item->title . '</a>';
+        $output .= '<div><a ' . $active_class . ' href="' . $url . '">' . $item->title . '</a>';
     }
 
     public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-        $output .= '</a>';
+        $output .= '</a></div>';
     }
 }
 
