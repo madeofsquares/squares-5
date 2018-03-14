@@ -1,10 +1,11 @@
-@import "wordpress";
+@import "wordpress.scss";
 
-@import "normalize";
+//@import "normalize.scss";
+@import "reset.scss";
 
-@import "vars";
-@import "type";
-@import "main";
-@import "header";
-@import "footer";
-@import "media";
+@import "vars.scss";
+@import "type.scss";
+@import "main.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "media.scss";
