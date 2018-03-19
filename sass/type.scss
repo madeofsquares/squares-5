@@ -29,7 +29,7 @@ p {
 a {
 	text-decoration: none;
 	color: $clr-black;
-	transition: all .15s linear;
+	transition: color 0.15s linear, background-color 0.2s linear;
 	
 	&:hover {
 		color: $clr-alpha-1;
@@ -77,7 +77,7 @@ h4, h5, h6 {
 
 %text-link {
 	box-shadow: 0 -0.2em 0 $clr-alpha-2 inset;
-	transition: all 0.2s linear;
+	transition: color 0.15s linear, box-shadow 0.2s linear;
 	color: inherit;
 	
 	&:hover {
@@ -103,7 +103,7 @@ ul {
     margin-left: 1em;
 
     li {
-        &:before {
+        &::before {
             content: '\25cf';
             color: $clr-beta-1;
             display: inline-block;
@@ -124,7 +124,7 @@ ol {
     li {
         counter-increment: li;
     
-        &:before {
+        &::before {
             content: counter(li);
             color: $clr-beta-1;
             display: inline-block;
@@ -202,7 +202,7 @@ ol {
 		flex-wrap: wrap;
 		
 		& *:not(:last-child) {
-			&:after {
+			&::after {
 				content: ", ";
 				white-space: pre;
 			}
@@ -246,7 +246,7 @@ ol {
     
     span {
         &:not(:last-child) {
-            &:after {
+            &::after {
                 content: ", ";
                 white-space: pre;
             }
@@ -294,7 +294,7 @@ blockquote {
 			color: inherit;
 		}
 		
-		&:before {
+		&::before {
 			content: "\2014";
 			margin-right: 0.5em;
 		}
@@ -315,7 +315,6 @@ button {
     border-radius: 4px;
     box-shadow: $shadow-lo;
     transition: all 0.2s ease;
-    cursor: pointer;
     
     &:hover {
         box-shadow: $shadow-hi;

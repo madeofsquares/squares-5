@@ -20,7 +20,7 @@ html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box; }
 
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: inherit; }
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
@@ -31,7 +31,7 @@ ol, ul, li {
 
 blockquote, q {
   quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
+  blockquote::before, blockquote::after, q::before, q::after {
     content: '';
     content: none; }
 
@@ -42,9 +42,7 @@ table {
 button, input[type="submit"],
 textarea[type="submit"] {
   background-color: transparent;
-  outline: none;
-  border: 0;
-  cursor: pointer; }
+  border: 0; }
 
 pre {
   font-family: monospace, monospace;
@@ -110,9 +108,25 @@ textarea[type="submit"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText; }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important; } }
+img,
+video {
+  max-width: 100%;
+  height: auto; }
+
+::selection {
+  background: rgba(250, 200, 45, 0.5);
+  color: #111; }
+
+*:focus {
+  outline: 4px solid rgba(250, 200, 45, 0.5); }
+
 .clearfix, main, main img, main figure {
   *zoom: 1; }
-  .clearfix:before, main:before, main img:before, main figure:before, .clearfix:after, main:after, main img:after, main figure:after {
+  .clearfix::before, main::before, main img::before, main figure::before, .clearfix::after, main::after, main img::after, main figure::after {
     content: " ";
     display: table; }
   .clearfix:after, main:after, main img:after, main figure:after {
@@ -137,7 +151,7 @@ p {
 a {
   text-decoration: none;
   color: #3f444d;
-  transition: all .15s linear; }
+  transition: color 0.15s linear, background-color 0.2s linear; }
   a:hover {
     color: #fb2934; }
 
@@ -172,7 +186,7 @@ h4, h5, h6 {
 
 p a, ul a, ol a, .comment-list .reply a {
   box-shadow: 0 -0.2em 0 #ffa294 inset;
-  transition: all 0.2s linear;
+  transition: color 0.15s linear, box-shadow 0.2s linear;
   color: inherit; }
   p a:hover, ul a:hover, ol a:hover, .comment-list .reply a:hover {
     box-shadow: 0 -0.5em 0 #ffa294 inset;
@@ -185,7 +199,7 @@ ul, ol {
 
 ul {
   margin-left: 1em; }
-  ul li:before {
+  ul li::before {
     content: '\25cf';
     color: #21cccd;
     display: inline-block;
@@ -197,7 +211,7 @@ ol {
   margin-left: 1.8em; }
   ol li {
     counter-increment: li; }
-    ol li:before {
+    ol li::before {
       content: counter(li);
       color: #21cccd;
       display: inline-block;
@@ -248,7 +262,7 @@ ol {
   .meta .meta-cats, .comment-list .comment-meta .meta-cats {
     display: flex;
     flex-wrap: wrap; }
-    .meta .meta-cats *:not(:last-child):after, .comment-list .comment-meta .meta-cats *:not(:last-child):after {
+    .meta .meta-cats *:not(:last-child)::after, .comment-list .comment-meta .meta-cats *:not(:last-child)::after {
       content: ", ";
       white-space: pre; }
   .meta .tags a, .comment-list .comment-meta .tags a {
@@ -274,7 +288,7 @@ ol {
   margin-bottom: 24px;
   text-transform: capitalize;
   white-space: pre; }
-  .client span:not(:last-child):after, .year span:not(:last-child):after, .project-media span:not(:last-child):after {
+  .client span:not(:last-child)::after, .year span:not(:last-child)::after, .project-media span:not(:last-child)::after {
     content: ", ";
     white-space: pre; }
 
@@ -306,7 +320,7 @@ blockquote {
     font-style: italic; }
     blockquote cite a {
       color: inherit; }
-    blockquote cite:before {
+    blockquote cite::before {
       content: "\2014";
       margin-right: 0.5em; }
 
@@ -323,8 +337,7 @@ textarea[type="submit"] {
   border: none;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(22, 134, 135, 0.4), 0 0 3px rgba(22, 134, 135, 0.2);
-  transition: all 0.2s ease;
-  cursor: pointer; }
+  transition: all 0.2s ease; }
   button:hover, input[type="submit"]:hover,
   textarea[type="submit"]:hover {
     box-shadow: 0 8px 20px rgba(22, 134, 135, 0.4), 0 0 10px rgba(22, 134, 135, 0.2); }
@@ -438,7 +451,7 @@ main {
     background-color: #f4f7f9;
     background-size: cover;
     background-position: center center; }
-    .page-grid > .grid-post:before {
+    .page-grid > .grid-post::before {
       content: "";
       float: left;
       padding-top: 100%; }
@@ -534,7 +547,7 @@ main {
     padding: 1em;
     color: #a1a6ab;
     font-weight: bold;
-    transition: all 0.2s linear;
+    transition: color 0.15s linear, background-color 0.2s linear;
     width: 100%; }
     .nav-menu a:hover {
       color: #3f444d;
@@ -578,7 +591,7 @@ main {
   font-weight: bold; }
   .menu-btn:hover {
     color: #7fe6dc; }
-  .menu-btn #lbl-on:before, .menu-btn #lbl-off:before {
+  .menu-btn #lbl-on::before, .menu-btn #lbl-off::before {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -589,10 +602,10 @@ main {
     margin-right: 0.4em; }
   .menu-btn #lbl-on {
     display: none; }
-    .menu-btn #lbl-on:before {
+    .menu-btn #lbl-on::before {
       content: '';
       background-image: url("./assets/icons/i-close.svg"); }
-  .menu-btn #lbl-off:before {
+  .menu-btn #lbl-off::before {
     content: '';
     background-image: url("./assets/icons/i-menu.svg"); }
   @media (min-width: 64em) {
@@ -686,72 +699,72 @@ hr {
   background-size: cover;
   background-repeat: no-repeat; }
 
-.project-media .icon, p.icon:before, a.icon:before, h1.icon:before, h2.icon:before, h3.icon:before, h4.icon:before, h5.icon:before, h6.icon:before, .icon-list div.icon {
+.project-media .icon, p.icon::before, a.icon::before, h1.icon::before, h2.icon::before, h3.icon::before, h4.icon::before, h5.icon::before, h6.icon::before, .icon-list div.icon {
   display: inline-block;
   width: 16px;
   height: 16px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center; }
-  .project-media .x8.icon, p.x8.icon:before, a.x8.icon:before, h1.x8.icon:before, h2.x8.icon:before, h3.x8.icon:before, h4.x8.icon:before, h5.x8.icon:before, h6.x8.icon:before, .icon-list div.x8.icon {
+  .project-media .x8.icon, p.x8.icon::before, a.x8.icon::before, h1.x8.icon::before, h2.x8.icon::before, h3.x8.icon::before, h4.x8.icon::before, h5.x8.icon::before, h6.x8.icon::before, .icon-list div.x8.icon {
     width: 8px;
     height: 8px; }
-  .project-media .x24.icon, p.x24.icon:before, a.x24.icon:before, h1.x24.icon:before, h2.x24.icon:before, h3.x24.icon:before, h4.x24.icon:before, h5.x24.icon:before, h6.x24.icon:before, .icon-list div.x24.icon {
+  .project-media .x24.icon, p.x24.icon::before, a.x24.icon::before, h1.x24.icon::before, h2.x24.icon::before, h3.x24.icon::before, h4.x24.icon::before, h5.x24.icon::before, h6.x24.icon::before, .icon-list div.x24.icon {
     width: 24px;
     height: 24px; }
-  .project-media .x32.icon, p.x32.icon:before, a.x32.icon:before, h1.x32.icon:before, h2.x32.icon:before, h3.x32.icon:before, h4.x32.icon:before, h5.x32.icon:before, h6.x32.icon:before, .icon-list div.x32.icon {
+  .project-media .x32.icon, p.x32.icon::before, a.x32.icon::before, h1.x32.icon::before, h2.x32.icon::before, h3.x32.icon::before, h4.x32.icon::before, h5.x32.icon::before, h6.x32.icon::before, .icon-list div.x32.icon {
     width: 32px;
     height: 32px; }
-  .project-media .x48.icon, p.x48.icon:before, a.x48.icon:before, h1.x48.icon:before, h2.x48.icon:before, h3.x48.icon:before, h4.x48.icon:before, h5.x48.icon:before, h6.x48.icon:before, .icon-list div.x48.icon {
+  .project-media .x48.icon, p.x48.icon::before, a.x48.icon::before, h1.x48.icon::before, h2.x48.icon::before, h3.x48.icon::before, h4.x48.icon::before, h5.x48.icon::before, h6.x48.icon::before, .icon-list div.x48.icon {
     width: 48px;
     height: 48px; }
-  .project-media .photoshop.icon, p.photoshop.icon:before, a.photoshop.icon:before, h1.photoshop.icon:before, h2.photoshop.icon:before, h3.photoshop.icon:before, h4.photoshop.icon:before, h5.photoshop.icon:before, h6.photoshop.icon:before, .icon-list div.photoshop.icon, .project-media .ps.icon, p.ps.icon:before, a.ps.icon:before, h1.ps.icon:before, h2.ps.icon:before, h3.ps.icon:before, h4.ps.icon:before, h5.ps.icon:before, h6.ps.icon:before, .icon-list div.ps.icon {
+  .project-media .photoshop.icon, p.photoshop.icon::before, a.photoshop.icon::before, h1.photoshop.icon::before, h2.photoshop.icon::before, h3.photoshop.icon::before, h4.photoshop.icon::before, h5.photoshop.icon::before, h6.photoshop.icon::before, .icon-list div.photoshop.icon, .project-media .ps.icon, p.ps.icon::before, a.ps.icon::before, h1.ps.icon::before, h2.ps.icon::before, h3.ps.icon::before, h4.ps.icon::before, h5.ps.icon::before, h6.ps.icon::before, .icon-list div.ps.icon {
     background-image: url("./assets/icons/i-photoshop.svg"); }
-  .project-media .illustrator.icon, p.illustrator.icon:before, a.illustrator.icon:before, h1.illustrator.icon:before, h2.illustrator.icon:before, h3.illustrator.icon:before, h4.illustrator.icon:before, h5.illustrator.icon:before, h6.illustrator.icon:before, .icon-list div.illustrator.icon, .project-media .il.icon, p.il.icon:before, a.il.icon:before, h1.il.icon:before, h2.il.icon:before, h3.il.icon:before, h4.il.icon:before, h5.il.icon:before, h6.il.icon:before, .icon-list div.il.icon {
+  .project-media .illustrator.icon, p.illustrator.icon::before, a.illustrator.icon::before, h1.illustrator.icon::before, h2.illustrator.icon::before, h3.illustrator.icon::before, h4.illustrator.icon::before, h5.illustrator.icon::before, h6.illustrator.icon::before, .icon-list div.illustrator.icon, .project-media .il.icon, p.il.icon::before, a.il.icon::before, h1.il.icon::before, h2.il.icon::before, h3.il.icon::before, h4.il.icon::before, h5.il.icon::before, h6.il.icon::before, .icon-list div.il.icon {
     background-image: url("./assets/icons/i-illustrator.svg"); }
-  .project-media .aftereffects.icon, p.aftereffects.icon:before, a.aftereffects.icon:before, h1.aftereffects.icon:before, h2.aftereffects.icon:before, h3.aftereffects.icon:before, h4.aftereffects.icon:before, h5.aftereffects.icon:before, h6.aftereffects.icon:before, .icon-list div.aftereffects.icon, .project-media .ae.icon, p.ae.icon:before, a.ae.icon:before, h1.ae.icon:before, h2.ae.icon:before, h3.ae.icon:before, h4.ae.icon:before, h5.ae.icon:before, h6.ae.icon:before, .icon-list div.ae.icon {
+  .project-media .aftereffects.icon, p.aftereffects.icon::before, a.aftereffects.icon::before, h1.aftereffects.icon::before, h2.aftereffects.icon::before, h3.aftereffects.icon::before, h4.aftereffects.icon::before, h5.aftereffects.icon::before, h6.aftereffects.icon::before, .icon-list div.aftereffects.icon, .project-media .ae.icon, p.ae.icon::before, a.ae.icon::before, h1.ae.icon::before, h2.ae.icon::before, h3.ae.icon::before, h4.ae.icon::before, h5.ae.icon::before, h6.ae.icon::before, .icon-list div.ae.icon {
     background-image: url("./assets/icons/i-afterevvects.svg"); }
-  .project-media .animate.icon, p.animate.icon:before, a.animate.icon:before, h1.animate.icon:before, h2.animate.icon:before, h3.animate.icon:before, h4.animate.icon:before, h5.animate.icon:before, h6.animate.icon:before, .icon-list div.animate.icon, .project-media .an.icon, p.an.icon:before, a.an.icon:before, h1.an.icon:before, h2.an.icon:before, h3.an.icon:before, h4.an.icon:before, h5.an.icon:before, h6.an.icon:before, .icon-list div.an.icon {
+  .project-media .animate.icon, p.animate.icon::before, a.animate.icon::before, h1.animate.icon::before, h2.animate.icon::before, h3.animate.icon::before, h4.animate.icon::before, h5.animate.icon::before, h6.animate.icon::before, .icon-list div.animate.icon, .project-media .an.icon, p.an.icon::before, a.an.icon::before, h1.an.icon::before, h2.an.icon::before, h3.an.icon::before, h4.an.icon::before, h5.an.icon::before, h6.an.icon::before, .icon-list div.an.icon {
     background-image: url("./assets/icons/i-animate.svg"); }
-  .project-media .dreamweaver.icon, p.dreamweaver.icon:before, a.dreamweaver.icon:before, h1.dreamweaver.icon:before, h2.dreamweaver.icon:before, h3.dreamweaver.icon:before, h4.dreamweaver.icon:before, h5.dreamweaver.icon:before, h6.dreamweaver.icon:before, .icon-list div.dreamweaver.icon, .project-media .dw.icon, p.dw.icon:before, a.dw.icon:before, h1.dw.icon:before, h2.dw.icon:before, h3.dw.icon:before, h4.dw.icon:before, h5.dw.icon:before, h6.dw.icon:before, .icon-list div.dw.icon {
+  .project-media .dreamweaver.icon, p.dreamweaver.icon::before, a.dreamweaver.icon::before, h1.dreamweaver.icon::before, h2.dreamweaver.icon::before, h3.dreamweaver.icon::before, h4.dreamweaver.icon::before, h5.dreamweaver.icon::before, h6.dreamweaver.icon::before, .icon-list div.dreamweaver.icon, .project-media .dw.icon, p.dw.icon::before, a.dw.icon::before, h1.dw.icon::before, h2.dw.icon::before, h3.dw.icon::before, h4.dw.icon::before, h5.dw.icon::before, h6.dw.icon::before, .icon-list div.dw.icon {
     background-image: url("./assets/icons/i-dreamweaver.svg"); }
-  .project-media .indesign.icon, p.indesign.icon:before, a.indesign.icon:before, h1.indesign.icon:before, h2.indesign.icon:before, h3.indesign.icon:before, h4.indesign.icon:before, h5.indesign.icon:before, h6.indesign.icon:before, .icon-list div.indesign.icon, .project-media .id.icon, p.id.icon:before, a.id.icon:before, h1.id.icon:before, h2.id.icon:before, h3.id.icon:before, h4.id.icon:before, h5.id.icon:before, h6.id.icon:before, .icon-list div.id.icon {
+  .project-media .indesign.icon, p.indesign.icon::before, a.indesign.icon::before, h1.indesign.icon::before, h2.indesign.icon::before, h3.indesign.icon::before, h4.indesign.icon::before, h5.indesign.icon::before, h6.indesign.icon::before, .icon-list div.indesign.icon, .project-media .id.icon, p.id.icon::before, a.id.icon::before, h1.id.icon::before, h2.id.icon::before, h3.id.icon::before, h4.id.icon::before, h5.id.icon::before, h6.id.icon::before, .icon-list div.id.icon {
     background-image: url("./assets/icons/i-indesign.svg"); }
-  .project-media .premiere.icon, p.premiere.icon:before, a.premiere.icon:before, h1.premiere.icon:before, h2.premiere.icon:before, h3.premiere.icon:before, h4.premiere.icon:before, h5.premiere.icon:before, h6.premiere.icon:before, .icon-list div.premiere.icon, .project-media .pr.icon, p.pr.icon:before, a.pr.icon:before, h1.pr.icon:before, h2.pr.icon:before, h3.pr.icon:before, h4.pr.icon:before, h5.pr.icon:before, h6.pr.icon:before, .icon-list div.pr.icon {
+  .project-media .premiere.icon, p.premiere.icon::before, a.premiere.icon::before, h1.premiere.icon::before, h2.premiere.icon::before, h3.premiere.icon::before, h4.premiere.icon::before, h5.premiere.icon::before, h6.premiere.icon::before, .icon-list div.premiere.icon, .project-media .pr.icon, p.pr.icon::before, a.pr.icon::before, h1.pr.icon::before, h2.pr.icon::before, h3.pr.icon::before, h4.pr.icon::before, h5.pr.icon::before, h6.pr.icon::before, .icon-list div.pr.icon {
     background-image: url("./assets/icons/i-premiere.svg"); }
-  .project-media .experiencedesign.icon, p.experiencedesign.icon:before, a.experiencedesign.icon:before, h1.experiencedesign.icon:before, h2.experiencedesign.icon:before, h3.experiencedesign.icon:before, h4.experiencedesign.icon:before, h5.experiencedesign.icon:before, h6.experiencedesign.icon:before, .icon-list div.experiencedesign.icon, .project-media .xd.icon, p.xd.icon:before, a.xd.icon:before, h1.xd.icon:before, h2.xd.icon:before, h3.xd.icon:before, h4.xd.icon:before, h5.xd.icon:before, h6.xd.icon:before, .icon-list div.xd.icon {
+  .project-media .experiencedesign.icon, p.experiencedesign.icon::before, a.experiencedesign.icon::before, h1.experiencedesign.icon::before, h2.experiencedesign.icon::before, h3.experiencedesign.icon::before, h4.experiencedesign.icon::before, h5.experiencedesign.icon::before, h6.experiencedesign.icon::before, .icon-list div.experiencedesign.icon, .project-media .xd.icon, p.xd.icon::before, a.xd.icon::before, h1.xd.icon::before, h2.xd.icon::before, h3.xd.icon::before, h4.xd.icon::before, h5.xd.icon::before, h6.xd.icon::before, .icon-list div.xd.icon {
     background-image: url("./assets/icons/i-xd.svg"); }
-  .project-media .twitter.icon, p.twitter.icon:before, a.twitter.icon:before, h1.twitter.icon:before, h2.twitter.icon:before, h3.twitter.icon:before, h4.twitter.icon:before, h5.twitter.icon:before, h6.twitter.icon:before, .icon-list div.twitter.icon, .project-media .twt.icon, p.twt.icon:before, a.twt.icon:before, h1.twt.icon:before, h2.twt.icon:before, h3.twt.icon:before, h4.twt.icon:before, h5.twt.icon:before, h6.twt.icon:before, .icon-list div.twt.icon, .project-media .tweet.icon, p.tweet.icon:before, a.tweet.icon:before, h1.tweet.icon:before, h2.tweet.icon:before, h3.tweet.icon:before, h4.tweet.icon:before, h5.tweet.icon:before, h6.tweet.icon:before, .icon-list div.tweet.icon {
+  .project-media .twitter.icon, p.twitter.icon::before, a.twitter.icon::before, h1.twitter.icon::before, h2.twitter.icon::before, h3.twitter.icon::before, h4.twitter.icon::before, h5.twitter.icon::before, h6.twitter.icon::before, .icon-list div.twitter.icon, .project-media .twt.icon, p.twt.icon::before, a.twt.icon::before, h1.twt.icon::before, h2.twt.icon::before, h3.twt.icon::before, h4.twt.icon::before, h5.twt.icon::before, h6.twt.icon::before, .icon-list div.twt.icon, .project-media .tweet.icon, p.tweet.icon::before, a.tweet.icon::before, h1.tweet.icon::before, h2.tweet.icon::before, h3.tweet.icon::before, h4.tweet.icon::before, h5.tweet.icon::before, h6.tweet.icon::before, .icon-list div.tweet.icon {
     background-image: url("./assets/icons/i-twitter.svg"); }
-  .project-media .youtube.icon, p.youtube.icon:before, a.youtube.icon:before, h1.youtube.icon:before, h2.youtube.icon:before, h3.youtube.icon:before, h4.youtube.icon:before, h5.youtube.icon:before, h6.youtube.icon:before, .icon-list div.youtube.icon, .project-media .yt.icon, p.yt.icon:before, a.yt.icon:before, h1.yt.icon:before, h2.yt.icon:before, h3.yt.icon:before, h4.yt.icon:before, h5.yt.icon:before, h6.yt.icon:before, .icon-list div.yt.icon {
+  .project-media .youtube.icon, p.youtube.icon::before, a.youtube.icon::before, h1.youtube.icon::before, h2.youtube.icon::before, h3.youtube.icon::before, h4.youtube.icon::before, h5.youtube.icon::before, h6.youtube.icon::before, .icon-list div.youtube.icon, .project-media .yt.icon, p.yt.icon::before, a.yt.icon::before, h1.yt.icon::before, h2.yt.icon::before, h3.yt.icon::before, h4.yt.icon::before, h5.yt.icon::before, h6.yt.icon::before, .icon-list div.yt.icon {
     background-image: url("./assets/icons/i-youtube.svg"); }
-  .project-media .facebook.icon, p.facebook.icon:before, a.facebook.icon:before, h1.facebook.icon:before, h2.facebook.icon:before, h3.facebook.icon:before, h4.facebook.icon:before, h5.facebook.icon:before, h6.facebook.icon:before, .icon-list div.facebook.icon, .project-media .fb.icon, p.fb.icon:before, a.fb.icon:before, h1.fb.icon:before, h2.fb.icon:before, h3.fb.icon:before, h4.fb.icon:before, h5.fb.icon:before, h6.fb.icon:before, .icon-list div.fb.icon {
+  .project-media .facebook.icon, p.facebook.icon::before, a.facebook.icon::before, h1.facebook.icon::before, h2.facebook.icon::before, h3.facebook.icon::before, h4.facebook.icon::before, h5.facebook.icon::before, h6.facebook.icon::before, .icon-list div.facebook.icon, .project-media .fb.icon, p.fb.icon::before, a.fb.icon::before, h1.fb.icon::before, h2.fb.icon::before, h3.fb.icon::before, h4.fb.icon::before, h5.fb.icon::before, h6.fb.icon::before, .icon-list div.fb.icon {
     background-image: url("./assets/icons/i-facebook.svg"); }
-  .project-media .google.icon, p.google.icon:before, a.google.icon:before, h1.google.icon:before, h2.google.icon:before, h3.google.icon:before, h4.google.icon:before, h5.google.icon:before, h6.google.icon:before, .icon-list div.google.icon {
+  .project-media .google.icon, p.google.icon::before, a.google.icon::before, h1.google.icon::before, h2.google.icon::before, h3.google.icon::before, h4.google.icon::before, h5.google.icon::before, h6.google.icon::before, .icon-list div.google.icon {
     background-image: url("./assets/icons/i-google.svg"); }
-  .project-media .tumblr.icon, p.tumblr.icon:before, a.tumblr.icon:before, h1.tumblr.icon:before, h2.tumblr.icon:before, h3.tumblr.icon:before, h4.tumblr.icon:before, h5.tumblr.icon:before, h6.tumblr.icon:before, .icon-list div.tumblr.icon {
+  .project-media .tumblr.icon, p.tumblr.icon::before, a.tumblr.icon::before, h1.tumblr.icon::before, h2.tumblr.icon::before, h3.tumblr.icon::before, h4.tumblr.icon::before, h5.tumblr.icon::before, h6.tumblr.icon::before, .icon-list div.tumblr.icon {
     background-image: url("./assets/icons/i-tumblr.svg"); }
-  .project-media .instagram.icon, p.instagram.icon:before, a.instagram.icon:before, h1.instagram.icon:before, h2.instagram.icon:before, h3.instagram.icon:before, h4.instagram.icon:before, h5.instagram.icon:before, h6.instagram.icon:before, .icon-list div.instagram.icon, .project-media .insta.icon, p.insta.icon:before, a.insta.icon:before, h1.insta.icon:before, h2.insta.icon:before, h3.insta.icon:before, h4.insta.icon:before, h5.insta.icon:before, h6.insta.icon:before, .icon-list div.insta.icon {
+  .project-media .instagram.icon, p.instagram.icon::before, a.instagram.icon::before, h1.instagram.icon::before, h2.instagram.icon::before, h3.instagram.icon::before, h4.instagram.icon::before, h5.instagram.icon::before, h6.instagram.icon::before, .icon-list div.instagram.icon, .project-media .insta.icon, p.insta.icon::before, a.insta.icon::before, h1.insta.icon::before, h2.insta.icon::before, h3.insta.icon::before, h4.insta.icon::before, h5.insta.icon::before, h6.insta.icon::before, .icon-list div.insta.icon {
     background-image: url("./assets/icons/i-instagram.svg"); }
-  .project-media .pinterest.icon, p.pinterest.icon:before, a.pinterest.icon:before, h1.pinterest.icon:before, h2.pinterest.icon:before, h3.pinterest.icon:before, h4.pinterest.icon:before, h5.pinterest.icon:before, h6.pinterest.icon:before, .icon-list div.pinterest.icon, .project-media .pin.icon, p.pin.icon:before, a.pin.icon:before, h1.pin.icon:before, h2.pin.icon:before, h3.pin.icon:before, h4.pin.icon:before, h5.pin.icon:before, h6.pin.icon:before, .icon-list div.pin.icon {
+  .project-media .pinterest.icon, p.pinterest.icon::before, a.pinterest.icon::before, h1.pinterest.icon::before, h2.pinterest.icon::before, h3.pinterest.icon::before, h4.pinterest.icon::before, h5.pinterest.icon::before, h6.pinterest.icon::before, .icon-list div.pinterest.icon, .project-media .pin.icon, p.pin.icon::before, a.pin.icon::before, h1.pin.icon::before, h2.pin.icon::before, h3.pin.icon::before, h4.pin.icon::before, h5.pin.icon::before, h6.pin.icon::before, .icon-list div.pin.icon {
     background-image: url("./assets/icons/i-pinterest.svg"); }
-  .project-media .linkedin.icon, p.linkedin.icon:before, a.linkedin.icon:before, h1.linkedin.icon:before, h2.linkedin.icon:before, h3.linkedin.icon:before, h4.linkedin.icon:before, h5.linkedin.icon:before, h6.linkedin.icon:before, .icon-list div.linkedin.icon {
+  .project-media .linkedin.icon, p.linkedin.icon::before, a.linkedin.icon::before, h1.linkedin.icon::before, h2.linkedin.icon::before, h3.linkedin.icon::before, h4.linkedin.icon::before, h5.linkedin.icon::before, h6.linkedin.icon::before, .icon-list div.linkedin.icon {
     background-image: url("./assets/icons/i-linkedin.svg"); }
-  .project-media .etsy.icon, p.etsy.icon:before, a.etsy.icon:before, h1.etsy.icon:before, h2.etsy.icon:before, h3.etsy.icon:before, h4.etsy.icon:before, h5.etsy.icon:before, h6.etsy.icon:before, .icon-list div.etsy.icon {
+  .project-media .etsy.icon, p.etsy.icon::before, a.etsy.icon::before, h1.etsy.icon::before, h2.etsy.icon::before, h3.etsy.icon::before, h4.etsy.icon::before, h5.etsy.icon::before, h6.etsy.icon::before, .icon-list div.etsy.icon {
     background-image: url("./assets/icons/i-etsy.svg"); }
-  .project-media .dropbox.icon, p.dropbox.icon:before, a.dropbox.icon:before, h1.dropbox.icon:before, h2.dropbox.icon:before, h3.dropbox.icon:before, h4.dropbox.icon:before, h5.dropbox.icon:before, h6.dropbox.icon:before, .icon-list div.dropbox.icon {
+  .project-media .dropbox.icon, p.dropbox.icon::before, a.dropbox.icon::before, h1.dropbox.icon::before, h2.dropbox.icon::before, h3.dropbox.icon::before, h4.dropbox.icon::before, h5.dropbox.icon::before, h6.dropbox.icon::before, .icon-list div.dropbox.icon {
     background-image: url("./assets/icons/i-dropbox.svg"); }
-  .project-media .email.icon, p.email.icon:before, a.email.icon:before, h1.email.icon:before, h2.email.icon:before, h3.email.icon:before, h4.email.icon:before, h5.email.icon:before, h6.email.icon:before, .icon-list div.email.icon, .project-media .mail.icon, p.mail.icon:before, a.mail.icon:before, h1.mail.icon:before, h2.mail.icon:before, h3.mail.icon:before, h4.mail.icon:before, h5.mail.icon:before, h6.mail.icon:before, .icon-list div.mail.icon {
+  .project-media .email.icon, p.email.icon::before, a.email.icon::before, h1.email.icon::before, h2.email.icon::before, h3.email.icon::before, h4.email.icon::before, h5.email.icon::before, h6.email.icon::before, .icon-list div.email.icon, .project-media .mail.icon, p.mail.icon::before, a.mail.icon::before, h1.mail.icon::before, h2.mail.icon::before, h3.mail.icon::before, h4.mail.icon::before, h5.mail.icon::before, h6.mail.icon::before, .icon-list div.mail.icon {
     background-image: url("./assets/icons/i-email.svg"); }
-  .project-media .download.icon, p.download.icon:before, a.download.icon:before, h1.download.icon:before, h2.download.icon:before, h3.download.icon:before, h4.download.icon:before, h5.download.icon:before, h6.download.icon:before, .icon-list div.download.icon {
+  .project-media .download.icon, p.download.icon::before, a.download.icon::before, h1.download.icon::before, h2.download.icon::before, h3.download.icon::before, h4.download.icon::before, h5.download.icon::before, h6.download.icon::before, .icon-list div.download.icon {
     background-image: url("./assets/icons/i-download.svg"); }
-  .project-media .pinterest.icon, p.pinterest.icon:before, a.pinterest.icon:before, h1.pinterest.icon:before, h2.pinterest.icon:before, h3.pinterest.icon:before, h4.pinterest.icon:before, h5.pinterest.icon:before, h6.pinterest.icon:before, .icon-list div.pinterest.icon, .project-media .pin.icon, p.pin.icon:before, a.pin.icon:before, h1.pin.icon:before, h2.pin.icon:before, h3.pin.icon:before, h4.pin.icon:before, h5.pin.icon:before, h6.pin.icon:before, .icon-list div.pin.icon {
+  .project-media .pinterest.icon, p.pinterest.icon::before, a.pinterest.icon::before, h1.pinterest.icon::before, h2.pinterest.icon::before, h3.pinterest.icon::before, h4.pinterest.icon::before, h5.pinterest.icon::before, h6.pinterest.icon::before, .icon-list div.pinterest.icon, .project-media .pin.icon, p.pin.icon::before, a.pin.icon::before, h1.pin.icon::before, h2.pin.icon::before, h3.pin.icon::before, h4.pin.icon::before, h5.pin.icon::before, h6.pin.icon::before, .icon-list div.pin.icon {
     background-image: url("./assets/icons/i-pinterest.svg"); }
-  .project-media .wordpress.icon, p.wordpress.icon:before, a.wordpress.icon:before, h1.wordpress.icon:before, h2.wordpress.icon:before, h3.wordpress.icon:before, h4.wordpress.icon:before, h5.wordpress.icon:before, h6.wordpress.icon:before, .icon-list div.wordpress.icon, .project-media .wp.icon, p.wp.icon:before, a.wp.icon:before, h1.wp.icon:before, h2.wp.icon:before, h3.wp.icon:before, h4.wp.icon:before, h5.wp.icon:before, h6.wp.icon:before, .icon-list div.wp.icon {
+  .project-media .wordpress.icon, p.wordpress.icon::before, a.wordpress.icon::before, h1.wordpress.icon::before, h2.wordpress.icon::before, h3.wordpress.icon::before, h4.wordpress.icon::before, h5.wordpress.icon::before, h6.wordpress.icon::before, .icon-list div.wordpress.icon, .project-media .wp.icon, p.wp.icon::before, a.wp.icon::before, h1.wp.icon::before, h2.wp.icon::before, h3.wp.icon::before, h4.wp.icon::before, h5.wp.icon::before, h6.wp.icon::before, .icon-list div.wp.icon {
     background-image: url("./assets/icons/i-wordpress.svg"); }
-  .project-media .menu.icon, p.menu.icon:before, a.menu.icon:before, h1.menu.icon:before, h2.menu.icon:before, h3.menu.icon:before, h4.menu.icon:before, h5.menu.icon:before, h6.menu.icon:before, .icon-list div.menu.icon {
+  .project-media .menu.icon, p.menu.icon::before, a.menu.icon::before, h1.menu.icon::before, h2.menu.icon::before, h3.menu.icon::before, h4.menu.icon::before, h5.menu.icon::before, h6.menu.icon::before, .icon-list div.menu.icon {
     background-image: url("./assets/icons/i-menu.svg"); }
-  .project-media .close.icon, p.close.icon:before, a.close.icon:before, h1.close.icon:before, h2.close.icon:before, h3.close.icon:before, h4.close.icon:before, h5.close.icon:before, h6.close.icon:before, .icon-list div.close.icon {
+  .project-media .close.icon, p.close.icon::before, a.close.icon::before, h1.close.icon::before, h2.close.icon::before, h3.close.icon::before, h4.close.icon::before, h5.close.icon::before, h6.close.icon::before, .icon-list div.close.icon {
     background-image: url("./assets/icons/i-close.svg"); }
 
 .project-media {
@@ -763,7 +776,7 @@ hr {
 p.icon, a.icon, h1.icon, h2.icon, h3.icon, h4.icon, h5.icon, h6.icon {
   position: relative;
   margin-left: 1.2em; }
-  p.icon:before, a.icon:before, h1.icon:before, h2.icon:before, h3.icon:before, h4.icon:before, h5.icon:before, h6.icon:before {
+  p.icon::before, a.icon::before, h1.icon::before, h2.icon::before, h3.icon::before, h4.icon::before, h5.icon::before, h6.icon::before {
     content: ' ';
     position: absolute;
     left: 0;

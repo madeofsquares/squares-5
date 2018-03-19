@@ -38,7 +38,7 @@ $shadow-in: 0 2px 5px $shadow-clr-2 inset;
 // mixins
 %clearfix {
 	*zoom: 1;
-	&:before, &:after {
+	&::before, &::after {
 		content: " ";
 		display: table;
 	}

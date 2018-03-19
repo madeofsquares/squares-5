@@ -82,7 +82,7 @@
         padding: 1em;
         color: $clr-grey;
         font-weight: bold;
-        transition: all 0.2s linear;
+        transition: color 0.15s linear, background-color 0.2s linear;
         width: 100%;
         
         &:hover {
@@ -146,7 +146,7 @@
     }
     
     #lbl-on, #lbl-off {
-        &:before {
+        &::before {
             background-size: contain;
             background-position: center center;
             background-repeat: no-repeat;
@@ -161,14 +161,14 @@
     #lbl-on {
         display: none;
         
-        &:before {
+        &::before {
             content: '';
             background-image: url('./assets/icons/i-close.svg');
         }
     }
     
     #lbl-off {        
-        &:before {
+        &::before {
             content: '';
             background-image: url('./assets/icons/i-menu.svg');
         }

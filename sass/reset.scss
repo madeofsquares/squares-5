@@ -15,7 +15,7 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
     box-sizing: inherit;
 }
 
@@ -30,7 +30,7 @@ ol, ul, li {
 blockquote, q {
     quotes: none;
     
-    &:before, &:after {
+    &::before, &::after {
         content: '';
         content: none;
     }
@@ -43,9 +43,7 @@ table {
 
 button {
     background-color: transparent;
-    outline: none;
     border: 0;
-    cursor: pointer;
 }
 
 pre {
@@ -117,3 +115,24 @@ button:-moz-focusring,
     outline: 1px dotted ButtonText;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+::selection {
+    background: rgba( 250, 200, 45, 0.5 );
+    color: #111;
+}
+
+*:focus {
+    outline: 4px solid rgba( 250, 200, 45, 0.5 );
+}
