@@ -439,3 +439,46 @@ textarea {
         }
     }
 }
+
+.pagination {
+    
+    .screen-reader-text {
+        position: absolute;
+        overflow: hidden;
+        clip: rect( 0 0 0 0 );
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .page-numbers {
+        display: block;
+        padding: 0.5em;
+        border-bottom: 2px solid $clr-grey;
+        font-size: 0.875em;
+        text-transform: uppercase;
+        transition: border-color 0.2s linear, color 0.2s linear;
+        
+        &:hover {
+            border-color: $clr-alpha-2;
+        }
+        
+        &:not( :last-child ) {
+            margin-right: 1em;
+        }
+        
+        &.current,
+        &.dots {
+            color: $clr-grey;
+            border: none;
+        }
+    }
+}

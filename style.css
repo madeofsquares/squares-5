@@ -409,6 +409,34 @@ textarea {
 .comment-list .reply {
   margin-bottom: 40px; }
 
+.pagination .screen-reader-text {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+.pagination .nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+.pagination .page-numbers {
+  display: block;
+  padding: 0.5em;
+  border-bottom: 2px solid #a1a6ab;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  transition: border-color 0.2s linear, color 0.2s linear; }
+  .pagination .page-numbers:hover {
+    border-color: #ffa294; }
+  .pagination .page-numbers:not(:last-child) {
+    margin-right: 1em; }
+  .pagination .page-numbers.current, .pagination .page-numbers.dots {
+    color: #a1a6ab;
+    border: none; }
+
 html {
   height: 100%; }
 
