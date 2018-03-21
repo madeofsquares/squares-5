@@ -154,6 +154,8 @@ a {
   transition: color 0.15s linear, background-color 0.2s linear; }
   a:hover {
     color: #fb2934; }
+  a:active {
+    outline: none; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Rubik", sans-serif;
@@ -476,7 +478,8 @@ main {
       align-items: flex-start;
       justify-content: flex-end;
       background: linear-gradient(20deg, rgba(33, 204, 205, 0.9), rgba(255, 162, 148, 0.75));
-      opacity: 0; }
+      opacity: 0;
+      transition: opacity 0.25s ease; }
       .page-grid > .grid-post a:hover, .page-grid > .grid-post a:active {
         opacity: 1; }
 
@@ -638,42 +641,47 @@ main img, main figure {
   clear: both;
   vertical-align: middle; }
   main img.alignnone, main img.aligncenter, main img.alignright, main img.alignleft, main figure.alignnone, main figure.aligncenter, main figure.alignright, main figure.alignleft {
-    margin: 0 calc(-50vw + 50%) 24px;
-    max-width: 100vw; }
+    margin: 0 auto 40px;
+    max-width: 100%; }
   @media (min-width: 45em) {
     main img.alignright, main figure.alignright {
       float: right;
-      margin: 24px calc(-50vw + 50%) 24px 40px;
-      max-width: 50vw; }
+      margin: 24px calc( ( -50vw + 40px ) + 50%) 40px 40px;
+      max-width: calc( 50vw - 40px ); }
     main img.alignleft, main figure.alignleft {
       float: left;
-      margin: 24px 40px 24px calc(-50vw + 50%);
-      max-width: 50vw; } }
+      margin: 24px 40px 40px calc( ( -50vw  + 40px ) + 50%);
+      max-width: calc( 50vw - 40px ); } }
 @media (min-width: 45em) {
   main .image-block {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 0 calc( ( -50vw + 48px ) + 50% ) 40px;
-    max-width: calc( 100vw - 96px ); } }
+    margin: 0 calc( ( -50vw + 40px ) + 50% ) 40px;
+    max-width: calc( 100vw - 80px ); } }
 @media (min-width: 45em) {
   main .image-block > img, main .image-block figure {
     float: none;
     flex: auto;
     width: 0;
-    max-width: 100vw;
+    max-width: 100%;
     margin: 0; }
     main .image-block > img:not(:last-child), main .image-block figure:not(:last-child) {
       margin-right: 24px; } }
 
 .video-container {
   position: relative;
-  padding-bottom: calc( ( 100vw - 48px ) * 0.5625 );
+  padding-bottom: calc( 100% * 0.5625 );
   height: 0;
   overflow: hidden;
-  margin: 0 calc( ( -50vw + 48px ) + 50% ) 40px;
-  max-width: calc( 100vw - 96px );
+  margin: 0 auto 40px;
+  max-width: 100%;
   clear: both; }
+  @media (min-width: 45em) {
+    .video-container {
+      max-width: calc( 100vw - 80px );
+      padding-bottom: calc( ( 100vw - 40px ) * 0.5625 );
+      margin: 0 calc( ( -50vw + 40px ) + 50% ) 40px; } }
 
 .video-container iframe,
 .video-container object,
