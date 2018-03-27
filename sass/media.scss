@@ -10,8 +10,12 @@ main {
         &.aligncenter,
         &.alignright,
         &.alignleft {
-            margin: 0 auto $mgn-wide;
-            max-width: 100%;
+            margin: 0 calc( ( -50vw + 40px ) + 50% ) $mgn-wide;
+            max-width: calc( 100vw - 80px );
+        }
+        
+        &.size-full {
+            width: 9999px; // override wordpress added width to force full width images
         }
         
         @include break-mob {

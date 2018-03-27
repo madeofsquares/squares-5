@@ -669,8 +669,10 @@ main img, main figure {
   clear: both;
   vertical-align: middle; }
   main img.alignnone, main img.aligncenter, main img.alignright, main img.alignleft, main figure.alignnone, main figure.aligncenter, main figure.alignright, main figure.alignleft {
-    margin: 0 auto 40px;
-    max-width: 100%; }
+    margin: 0 calc( ( -50vw + 40px ) + 50% ) 40px;
+    max-width: calc( 100vw - 80px ); }
+  main img.size-full, main figure.size-full {
+    width: 9999px; }
   @media (min-width: 45em) {
     main img.alignright, main figure.alignright {
       float: right;
