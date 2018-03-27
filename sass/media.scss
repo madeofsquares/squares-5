@@ -26,6 +26,18 @@ main {
                 max-width: calc( 50vw - 40px );
             }
         }
+        
+        &.screenshot {
+            padding-top: 30px;
+            padding-bottom: 10px;
+            background-color: $clr-mid-grey;
+            background-image: url( 'assets/screenshot-bg.svg' );
+            background-repeat: no-repeat;
+            background-size: 32px 8px;
+            background-position: 10px 10px;
+            border: 2px solid $clr-mid-grey;
+            border-radius: 6px;
+        }
     }
     
     .image-block {

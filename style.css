@@ -680,6 +680,16 @@ main img, main figure {
       float: left;
       margin: 24px 40px 40px calc( ( -50vw  + 40px ) + 50%);
       max-width: calc( 50vw - 40px ); } }
+  main img.screenshot, main figure.screenshot {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-color: #ccd2d6;
+    background-image: url("assets/screenshot-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 32px 8px;
+    background-position: 10px 10px;
+    border: 2px solid #ccd2d6;
+    border-radius: 6px; }
 @media (min-width: 45em) {
   main .image-block {
     display: flex;
