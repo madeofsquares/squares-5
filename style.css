@@ -124,12 +124,16 @@ video {
 *:focus {
   outline: 4px solid rgba(250, 200, 45, 0.5); }
 
-.clearfix, main, main img, main figure {
+.clearfix, main, main img,
+main figure {
   *zoom: 1; }
-  .clearfix::before, main::before, main img::before, main figure::before, .clearfix::after, main::after, main img::after, main figure::after {
+  .clearfix::before, main::before, main img::before,
+  main figure::before, .clearfix::after, main::after, main img::after,
+  main figure::after {
     content: " ";
     display: table; }
-  .clearfix:after, main:after, main img:after, main figure:after {
+  .clearfix:after, main:after, main img:after,
+  main figure:after {
     clear: both; }
 
 body {
@@ -663,26 +667,35 @@ footer {
   footer p {
     margin-bottom: 0; }
 
-main img, main figure {
+main img,
+main figure {
   max-width: 100%;
   height: auto;
   clear: both;
-  vertical-align: middle; }
-  main img.alignnone, main img.aligncenter, main img.alignright, main img.alignleft, main figure.alignnone, main figure.aligncenter, main figure.alignright, main figure.alignleft {
-    margin: 0 calc( ( -50vw + 40px ) + 50% ) 40px;
-    max-width: calc( 100vw - 80px ); }
-  main img.size-full, main figure.size-full {
-    width: 9999px; }
+  vertical-align: middle;
+  margin-bottom: 40px; }
   @media (min-width: 45em) {
-    main img.alignright, main figure.alignright {
+    main img.alignnone, main img.aligncenter,
+    main figure.alignnone,
+    main figure.aligncenter {
+      max-width: calc( 100vw - 80px );
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%); }
+    main img.alignright,
+    main figure.alignright {
       float: right;
-      margin: 24px calc( ( -50vw + 40px ) + 50%) 40px 40px;
-      max-width: calc( 50vw - 40px ); }
-    main img.alignleft, main figure.alignleft {
+      max-width: 50vw;
+      margin: 24px 40px;
+      margin-right: calc( 50% - 50vw + 40px ); }
+    main img.alignleft,
+    main figure.alignleft {
       float: left;
-      margin: 24px 40px 40px calc( ( -50vw  + 40px ) + 50%);
-      max-width: calc( 50vw - 40px ); } }
-  main img.screenshot, main figure.screenshot {
+      max-width: 50vw;
+      margin: 24px 40px;
+      margin-left: calc( 50% - 50vw + 40px ); } }
+  main img.screenshot,
+  main figure.screenshot {
     padding-top: 30px;
     padding-bottom: 10px;
     background-color: #ccd2d6;
@@ -697,8 +710,10 @@ main img, main figure {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 0 calc( ( -50vw + 40px ) + 50% ) 40px;
-    max-width: calc( 100vw - 80px ); } }
+    max-width: calc( 100vw - 80px );
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); } }
 @media (min-width: 45em) {
   main .image-block > img, main .image-block figure {
     float: none;
