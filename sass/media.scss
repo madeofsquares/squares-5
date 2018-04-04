@@ -11,24 +11,21 @@ main {
         @include break-mob {
             &.alignnone,
             &.aligncenter {
-                max-width: calc( 100vw - 80px );
-                position: relative;
-                left: 50%;
-                transform: translateX( -50% );
+                max-width: 100%;
             }
             
             &.alignright {
                 float: right;
-                max-width: 50vw;
-                margin: $mgn-thin $mgn-wide;
-                margin-right: calc( 50% - 50vw + 40px );
+                width: 45vw;
+                margin: $mgn-wide;
+                margin-right: calc( -50vw + 50% );
             }
             
             &.alignleft {
                 float: left;
-                max-width: 50vw;
-                margin: $mgn-thin $mgn-wide;
-                margin-left: calc( 50% - 50vw + 40px );
+                width: 45vw;
+                margin: $mgn-wide;
+                margin-left: calc( -50vw + 50% );
             }
         }
         
@@ -43,26 +40,36 @@ main {
             border: 2px solid $clr-mid-grey;
             border-radius: 6px;
         }
+        
+        & > img {
+            // remove bottom margin for images inside a fig
+            margin-bottom: 0;
+        }
     }
     
     .image-block {
+        &.full-width {
+            padding: 0 $mgn-thin;
+        }
+        
         @include break-mob {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            max-width: calc( 100vw - 80px );
-            position: relative;
-            left: 50%;
-            transform: translateX( -50% );
+            width: 100%;
+            
+            &.full-width {
+                padding: 0 $mgn-wide;
+            }
         }
         
-        & > img, figure {
+        & > img,
+        & > figure {
             @include break-mob {
                 float: none; // clear any floating from wayward classes
                 flex: auto;
                 width: 0;
                 max-width: 100%;
-                margin: 0;
                 
                 &:not(:last-child) {
                     margin-right: $mgn-thin;
@@ -81,10 +88,8 @@ main {
     max-width: 100%;
     clear: both;
     
-    @include break-mob {
-        max-width: calc( 100vw - 80px );
-        padding-bottom: calc( ( 100vw - 40px ) * 0.5625 );
-        margin: 0 calc( ( -50vw + 40px ) + 50% ) $mgn-wide;
+    &.full-width {
+        padding-bottom: calc( 100vw * 0.5625 );
     }
 }
 

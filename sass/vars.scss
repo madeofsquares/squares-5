@@ -34,7 +34,6 @@ $shadow-in: 0 2px 5px $shadow-clr-2 inset;
 		@content;
 	}
 }
-// @include break-mob { content }
 
 // mixins
 %clearfix {
@@ -50,7 +49,16 @@ $shadow-in: 0 2px 5px $shadow-clr-2 inset;
 .clearfix {
 	@extend %clearfix;
 }
-// @extend %clearfix;
+
+%fullwidth {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
 
 @mixin crossbrowser( $property, $css ) {
     -webkit-#{$property}: $css;
