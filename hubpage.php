@@ -12,7 +12,8 @@
         <?php
         $childArgs = array(
             'child_of'      => $post->ID,
-            'sort_column'   => 'desc',
+            'sort_order'    => 'desc',
+            'sort_column'   => 'post_date',
             'hierarchical'  => 0,
         );
         $pageChildren = get_pages( $childArgs );
